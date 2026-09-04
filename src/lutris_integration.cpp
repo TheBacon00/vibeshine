@@ -127,7 +127,7 @@ namespace platf::lutris {
     if (database_path.empty()) return {};
 
     sqlite3 *raw_database = nullptr;
-    if (sqlite3_open_v2(database_path.c_str(), &raw_database,
+    if (sqlite3_open_v2(database_path.string().c_str(), &raw_database,
                         SQLITE_OPEN_READONLY | SQLITE_OPEN_FULLMUTEX, nullptr) != SQLITE_OK) {
       if (raw_database) sqlite3_close(raw_database);
       return {};
