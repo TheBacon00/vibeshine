@@ -193,7 +193,7 @@ jobs:
     name: Windows
     needs:
       - release-candidate
-    if: github.event_name != 'push' || needs.release-candidate.outputs.should_release == 'true'
+    if: true
     permissions:
       actions: read
       contents: read
