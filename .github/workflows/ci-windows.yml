@@ -254,7 +254,8 @@ jobs:
       - name: Apply EDID fix
         shell: bash
         run: |
-          sed -i 's/extension\[2\] = byte(data_offset);/extension[2] = std::byte {0};/' third-party/libvirtualdisplay/src/driver/edid.cpp
+          sed -i 's/extension\[3\] = std::byte {0xf0};/write_detailed_timing(extension, data_offset, safe_options); data_offset += 18; extension[3] = std::byte {0xf1};/' third-party/libvirtualdisplay/src/driver/edid.cpp
+
 
       - name: Resolve Windows build version
         shell: pwsh
