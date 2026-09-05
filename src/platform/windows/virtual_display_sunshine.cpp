@@ -1845,7 +1845,7 @@ namespace VDISPLAY_SUNSHINE {
       return result.api_available ? false : registry_success;
     }
 
-    void apply_hdr_profile_if_available(
+    void // apply_hdr_profile_if_available(
       const std::optional<std::wstring> &display_name,
       const std::optional<std::string> &device_id,
       const std::optional<std::wstring> &monitor_device_path,
@@ -4867,7 +4867,7 @@ namespace VDISPLAY_SUNSHINE {
     const std::optional<std::string> hdr_profile = std::string(s_hdr_profile);
 
     // Physical displays: best-effort apply; do not clear mismatched profiles.
-    apply_hdr_profile_if_available(
+    // apply_hdr_profile_if_available(
       std::nullopt,
       device_id,
       std::nullopt,
@@ -6718,7 +6718,7 @@ namespace VDISPLAY_SUNSHINE {
             if (s_hdr_profile && std::strlen(s_hdr_profile) > 0) {
               hdr_profile = std::string(s_hdr_profile);
             }
-            apply_hdr_profile_if_available(
+            // apply_hdr_profile_if_available(
               result.display_name,
               result.device_id,
               result.monitor_device_path,
@@ -7024,7 +7024,7 @@ namespace VDISPLAY_SUNSHINE {
       if (s_hdr_profile && std::strlen(s_hdr_profile) > 0) {
         hdr_profile = std::string(s_hdr_profile);
       }
-      apply_hdr_profile_if_available(
+      // apply_hdr_profile_if_available(
         result.display_name,
         result.device_id,
         result.monitor_device_path,
